@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>麦麦时光机</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>麦麦时光机</span>
+    </div>
+    <div class="bar-actions">
+      <span id="mode-badge" class="badge">演示</span>
+      <button id="btn-refresh" class="icon-btn" title="刷新" aria-label="刷新">↻</button>
+      <button id="btn-options" class="icon-btn" title="设置 MCP Token" aria-label="设置 MCP Token">⚙ 设置</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <div id="setup-banner" class="banner" hidden>
+      <div class="banner-text">
+        <strong>当前为演示模式</strong>
+        <span>未连接你的麦当劳账号，以下为示例数据。</span>
+      </div>
+      <button id="banner-setup" class="primary">配置 Token</button>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="report">我的足迹</button>
+      <button class="tab" data-tab="benefits">今日福利</button>
+    </nav>
+
+    <!-- 我的足迹（报告） -->
+    <div id="panel-report" class="panel">
+      <div class="row">
+        <div class="seg">
+          <button class="seg-btn active" data-days="30">近30天</button>
+          <button class="seg-btn" data-days="365">近一年</button>
+        </div>
+      </div>
+      <section class="card report-card" id="report-card"></section>
+      <div class="row actions">
+        <button id="btn-copy" class="ghost">复制文案</button>
+        <button id="btn-html" class="ghost">导出报告</button>
+        <button id="btn-card" class="primary">下载分享卡</button>
+      </div>
+    </div>
+
+    <!-- 今日福利 -->
+    <div id="panel-benefits" class="panel" hidden>
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="muted">可用积分</div>
+            <div id="points" class="metric">--</div>
+          </div>
+          <div class="right">
+            <div class="muted">临期积分</div>
+            <div id="points-expiring" class="metric sm">--</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <h2>可领取优惠券</h2>
+          <button id="btn-claim" class="primary">一键领券</button>
+        </div>
+        <ul id="claimable" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>我的券 <span id="mine-count" class="muted"></span></h2>
+        <ul id="mine" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>进行中的活动</h2>
+        <ul id="campaigns" class="list"></ul>
+      </section>
+    </div>
+
+    <p id="status" class="status" role="status"></p>
+    <p id="warnings" class="warnings"></p>
+
+    <footer class="foot">
+      <span>非麦当劳官方产品 · 数据来自麦当劳中国 MCP</span>
+    </footer>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

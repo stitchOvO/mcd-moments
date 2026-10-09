@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>麦麦时光机 · 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <h1>麦麦时光机 · 设置</h1>
+
+    <section>
+      <label for="token">麦当劳 MCP Token</label>
+      <input id="token" type="password" autocomplete="off" placeholder="粘贴你的 MCP Token（仅保存在本地）" />
+      <p class="hint">
+        Token 仅保存在浏览器本地存储中，不会上传、不会写入仓库。
+        在 <a href="https://open.mcd.cn/mcp" target="_blank" rel="noreferrer">open.mcd.cn/mcp</a> 手机号登录后于「控制台」激活获取。
+      </p>
+    </section>
+
+    <section>
+      <label for="endpoint">MCP 接入地址</label>
+      <input id="endpoint" type="text" value="https://mcp.mcd.cn" />
+    </section>
+
+    <section>
+      <label class="checkbox">
+        <input id="mock" type="checkbox" />
+        <span>演示模式（使用内置示例数据，不调用真实接口）</span>
+      </label>
+    </section>
+
+    <section>
+      <h2>每日提醒</h2>
+      <label class="checkbox">
+        <input id="reminders" type="checkbox" />
+        <span>每天 9:00 提醒可领券 / 临期券 / 临期积分</span>
+      </label>
+      <label class="checkbox">
+        <input id="autoClaim" type="checkbox" />
+        <span>提醒时自动领取全部可用券（会自动调用一次领券）</span>
+      </label>
+      <div class="actions">
+        <button id="test" class="ghost">立即测试提醒</button>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="save" class="primary">保存</button>
+      <button id="clear" class="ghost">清除 Token</button>
+      <span id="status" class="status"></span>
+    </div>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

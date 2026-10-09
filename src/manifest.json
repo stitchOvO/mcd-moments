@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "麦麦时光机 M-Moments",
+  "version": "0.3.0",
+  "description": "基于麦当劳中国 MCP 的浏览器插件：一键生成你的「麦麦足迹」报告（消费/常去门店/麦门人格），并聚合优惠券、临期提醒、积分与活动。",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "action": {
+    "default_title": "麦麦时光机",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://mcp.mcd.cn/*"
+  ]
+}

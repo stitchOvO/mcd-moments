@@ -1,0 +1,16 @@
+{
+  "name": "mcradar",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "麦麦福利雷达 McRadar —— 基于麦当劳中国 MCP 的浏览器插件",
+  "scripts": {
+    "smoke": "node scripts/smoke-test.mjs",
+    "probe": "node scripts/probe.mjs",
+    "verify": "node scripts/verify-probe.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
